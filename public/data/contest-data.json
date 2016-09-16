@@ -1,0 +1,40 @@
+{
+  "contest": [
+    {
+      "title" : "Contest new",
+      "image" : "images/contest-1.jpg",
+      "href"  : "./data/contest-detail.tpl",
+      "captions" : "<div class=\"captions\"><p>Đăng lên bởi <br><strong>Minh Gia</strong></p><p><a href=\"#\" title=\"like facebook\"><img src=\"images/btn-likeface.png\" alt=\"like facebook\"></a></p></div>"
+    },
+    {
+      "title" : "Contest new",
+      "image" : "images/contest-2.jpg",
+      "href"  : "./data/contest-detail.tpl",
+      "captions" : "<div class=\"captions\"><p>Đăng lên bởi <br><strong>Minh Gia</strong></p><p><a href=\"#\" title=\"like facebook\"><img src=\"images/btn-likeface.png\" alt=\"like facebook\"></a></p></div>"
+    },
+    {
+      "title" : "Contest new",
+      "image" : "images/contest-3.jpg",
+      "href"  : "./data/contest-detail.tpl",
+      "captions" : "<div class=\"captions\"><p>Đăng lên bởi <br><strong>Minh Gia</strong></p><p><a href=\"#\" title=\"like facebook\"><img src=\"images/btn-likeface.png\" alt=\"like facebook\"></a></p></div>"
+    },
+    {
+      "title" : "Contest new",
+      "image" : "images/contest-4.jpg",
+      "href"  : "./data/contest-detail.tpl",
+      "captions" : "<div class=\"captions\"><p>Đăng lên bởi <br><strong>Minh Gia</strong></p><p><a href=\"#\" title=\"like facebook\"><img src=\"images/btn-likeface.png\" alt=\"like facebook\"></a></p></div>"
+    },
+    {
+      "title" : "Contest new",
+      "image" : "images/contest-5.jpg",
+      "href"  : "./data/contest-detail.tpl",
+      "captions" : "<div class=\"captions\"><p>Đăng lên bởi <br><strong>Minh Gia</strong></p><p><a href=\"#\" title=\"like facebook\"><img src=\"images/btn-likeface.png\" alt=\"like facebook\"></a></p></div>"
+    },
+    {
+      "title" : "Contest new",
+      "image" : "images/contest-6.jpg",
+      "href"  : "./data/contest-detail.tpl",
+      "captions" : "<div class=\"captions\"><p>Đăng lên bởi <br><strong>Minh Gia</strong></p><p><a href=\"#\" title=\"like facebook\"><img src=\"images/btn-likeface.png\" alt=\"like facebook\"></a></p></div>"
+    }
+  ]
+}

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en" class="no-js ie ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="no-js ie ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><![endif]-->
+    <title>Home page</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="css/ie.css"><![endif]-->
+    <script src="js/modernizr.js"></script>
+  </head>
+  <body class="home">
+    <div id="container">
+      <header id="header">
+        <div class="account-widget">
+          <p>Bạn chưa đăng nhập. Vui lòng &nbsp;<a href="#login" title="Đăng nhập" class="link-to-login">Đăng nhập</a><span>&nbsp;hoặc&nbsp;</span><a href="#register" title="Đăng ký" class="link-to-register">Đăng ký</a>
+          </p>
+          <div id="register" style="display:none">
+            <h3 class="title four-title">Đăng ký tài khoản</h3>
+            <form id="register-form" action="" name="register_form" method="POST" data-validation="true" novalidate>
+              <div class="row">
+                <label for="username">Tên đăng nhập</label>
+                <div class="col">
+                  <input id="username" type="text" name="username" value="" required="true">
+                </div>
+              </div>
+              <div class="row">
+                <label for="password">Mật khẩu</label>
+                <div class="col">
+                  <input id="password" type="password" name="password" value="" required="true">
+                </div>
+              </div>
+              <div class="row">
+                <label for="retype-password">Nhập lại mật khẩu</label>
+                <div class="col">
+                  <input id="retype-password" type="password" name="retype_password" value="" required="true">
+                </div>
+              </div>
+              <div class="row">
+                <label for="useremail">Email của bạn</label>
+                <div class="col">
+                  <input id="useremail" type="email" name="useremail" value="" required="true">
+                </div>
+              </div>
+              <div class="row">
+                <label>Giới tính</label>
+                <div class="col">
+                  <fieldset class="radiogroup"><legend></legend>
+                    <label for="male" class="custom-radio">
+                      <input id="male" type="radio" name="sex" value="male"><span>Nam</span>
+                    </label>
+                    <label for="female" class="custom-radio">
+                      <input id="female" type="radio" name="sex" value="male"><span>Nữ</span>
+                    </label>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="row row-birthday">
+                <label>Ngày sinh</label>
+                <div class="col">
+                  <label for="date" class="custom-select select-date">Chọn ngày
+                    <select id="date" name="date">
+                      <option value="" selected>Ngày</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                    </select>
+                  </label>
+                  <label for="month" class="custom-select select-month">Chọn tháng
+                    <select id="month" name="month">
+                      <option value="" selected>Tháng</option>
+                      <option value="1">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                    </select>
+                  </label>
+                  <label for="year" class="custom-select select-year">Chọn năm
+                    <select id="year" name="year">
+                      <option value="" selected>Năm</option>
+                      <option value="1990">1990</option>
+                      <option value="1989">1989</option>
+                      <option value="1988">1988</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <label for="phone">Số điện thoại</label>
+                <div class="col">
+                  <input id="phone" type="tel" name="phone" value="">
+                </div>
+              </div>
+              <div class="row">
+                <label for="address">Địa chỉ</label>
+                <div class="col">
+                  <input id="address" type="text" name="address" value="">
+                </div>
+              </div>
+              <div class="row">
+                <label for="city">Tỉnh/ TP</label>
+                <div class="col">
+                  <input id="city" type="text" name="city" value="">
+                </div>
+              </div>
+              <div class="row">
+                <label>&nbsp;</label>
+                <div class="col">
+                  <label for="confirm" class="custom-checkbox">
+                    <input id="confirm" type="checkbox" name="confirm" value="1"><span>Tôi đã đọc và đồng ý hoàn toàn với các <strong>Điều khoản sử dụng.</strong></span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <label>&nbsp;</label>
+                <div class="col">
+                  <button id="btn-register" type="submit" name="btn_register" class="button">ĐĂNG KÝ</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div><a href="index.html" title="Sofresh | Digital Creative Agency" class="logo"><img src="images/logo.png" alt="Sofresh | Digital Creative Agency"/></a>
+      </header>
+      <div class="inner">
+        <main id="main" class="modules">
+          <div id="home" class="module panel">
+            <section>
+              <div class="block block-home-idol">
+                <div class="outer">
+                  <div class="inner">
+                    <div class="content"><a href="#" title="Vietnam Idol"><img src="images/vietnam-idol.png" alt="Vietnam Idol"/></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block block-home-bg block-home-contest">
+                <div class="outer">
+                  <div class="inner">
+                    <div class="content">
+                      <h2 class="title third-title">CUỘC THI:</h2>
+                      <h1 class="title first-title">PRACTICAL TEST:</h1>
+                      <p class="text-reward">GIẢI NHẤT TRỊ GIÁ 1.000..000.000đ</p>
+                      <p class="uppercase">Trình diễn  tại SOFRESH</p>
+                      <div class="button-wrap"><a href="#" title="Xem chi tiết" class="button">Xem chi tiết</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block block-home-bg block-home-sofresh">
+                <div class="outer">
+                  <div class="inner">
+                    <div class="content">
+                      <h2 class="title third-title">SOFRESH DIGITAL CREATIVE AGENCY</h2>
+                      <p class="slogan">Thể hiện phong cách của bạn tại Sofresh Digital Creative Agency</p>
+                      <ul class="photo-wrap">
+                        <li><img src="images/model-A.jpg" alt="Model A"></li>
+                        <li><img src="images/model-B.jpg" alt="Model B"></li>
+                        <li><img src="images/model-C.jpg" alt="Model C"></li>
+                        <li><img src="images/model-D.jpg" alt="Model D"></li>
+                      </ul>
+                      <div class="button-wrap"><a href="#" title="Join" class="button">Join</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div id="contest" class="module panel">
+            <section>
+              <h1 class="title second-title">Cuộc thi</h1>
+              <div class="block block-contest">
+                <div class="outer">
+                  <div class="inner">
+                    <div class="content">
+                      <nav class="contest-tab">
+                        <ul>
+                          <li><a href="#" title="bài dự thi" class="title four-title active" data-tabcontent="#submission">bài dự thi</a>
+                          </li>
+                          <li><a href="#" title="chủ đề" class="title four-title" data-tabcontent="#theme">chủ đề</a>
+                          </li>
+                          <li><a href="#" title="thể lệ" class="title four-title" data-tabcontent="#rule">thể lệ</a>
+                          </li>
+                        </ul>
+                      </nav>
+                      <div class="tabs contest-tab-content">
+                        <div id="submission" class="item tab">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>
+                          <div data-mycarousel="true" class="carousel">
+                            <div class="preview">
+                              <div class="wrap">
+                                <ul class="list-item">
+                                  <li>
+                                    <ul>
+                                      <li><a href="./data/contest-detail.tpl" title="Contest 1" class="link-contest-detail" data-fancybox-type="ajax"><img src="images/contest-1.jpg" alt="Contest 1"/></a>
+                                        <div class="captions">
+                                          <p>Đăng lên bởi <br><strong>Minh Gia</strong></p><a href="#" title="like facebook"><img src="images/btn-likeface.png" alt="like facebook"/></a>
+                                        </div>
+                                      </li>
+                                      <li><a href="./data/contest-detail.tpl" title="Contest 2" class="link-contest-detail" data-fancybox-type="ajax"><img src="images/contest-2.jpg" alt="Contest 2"/></a>
+                                        <div class="captions">
+                                          <p>Đăng lên bởi <br><strong>Minh Gia</strong></p><a href="#" title="like facebook"><img src="images/btn-likeface.png" alt="like facebook"/></a>
+                                        </div>
+                                      </li>
+                                      <li><a href="./data/contest-detail.tpl" title="Contest 3" class="link-contest-detail" data-fancybox-type="ajax"><img src="images/contest-3.jpg" alt="Contest 3"/></a>
+                                        <div class="captions">
+                                          <p>Đăng lên bởi <br><strong>Minh Gia</strong></p><a href="#" title="like facebook"><img src="images/btn-likeface.png" alt="like facebook"/></a>
+                                        </div>
+                                      </li>
+                                      <li><a href="./data/contest-detail.tpl" title="Contest 4" class="link-contest-detail" data-fancybox-type="ajax"><img src="images/contest-4.jpg" alt="Contest 4"/></a>
+                                        <div class="captions">
+                                          <p>Đăng lên bởi <br><strong>Minh Gia</strong></p><a href="#" title="like facebook"><img src="images/btn-likeface.png" alt="like facebook"/></a>
+                                        </div>
+                                      </li>
+                                      <li><a href="./data/contest-detail.tpl" title="Contest 5" class="link-contest-detail" data-fancybox-type="ajax"><img src="images/contest-5.jpg" alt="Contest 5"/></a>
+                                        <div class="captions">
+                                          <p>Đăng lên bởi <br><strong>Minh Gia</strong></p><a href="#" title="like facebook"><img src="images/btn-likeface.png" alt="like facebook"/></a>
+                                        </div>
+                                      </li>
+                                      <li><a href="./data/contest-detail.tpl" title="Contest 6" class="link-contest-detail" data-fancybox-type="ajax"><img src="images/contest-6.jpg" alt="Contest 6"/></a>
+                                        <div class="captions">
+                                          <p>Đăng lên bởi <br><strong>Minh Gia</strong></p><a href="#" title="like facebook"><img src="images/btn-likeface.png" alt="like facebook"/></a>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <li class="empty-content"><img src="images/loader.gif" alt="Loading..."></li>
+                                  <li class="empty-content"><img src="images/loader.gif" alt="Loading..."></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="controls">
+                              <ul>
+                                <li><a href="#" title="prev" class="btn-control btn-prev" data-control="prev">prev</a>
+                                </li>
+                                <li><a href="#" title="next" class="btn-control btn-next" data-control="next">next</a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="pagination">
+                              <ul>
+                                <li><a href="#" title="Đầu" class="item first-item" data-paginate="first">Đầu</a>
+                                </li>
+                                <li><a href="#" title="1" class="item item-1 active" data-paginate="1">1</a>
+                                </li>
+                                <li><a href="#" title="2" class="item item-2" data-paginate="2">2</a>
+                                </li>
+                                <li><a href="#" title="3" class="item item-3" data-paginate="3">3</a>
+                                </li>
+                                <li><a href="#" title="Cuối" class="item last-item" data-paginate="last">Cuối</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="theme" class="item tab">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>
+                        </div>
+                        <div id="rule" class="item tab">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div id="carousel" class="module panel">
+            <section>
+              <h1 class="title second-title">CAROUSEL</h1>
+              <div class="block block-carousel">
+                <div class="outer">
+                  <div class="inner">
+                    <div class="content">
+                      <div data-mycarousel="true" class="carousel">
+                        <div class="preview">
+                          <div class="wrap">
+                            <ul class="list-item">
+                              <li><a href="" title="Carousel 2012"><img src="images/carousel-2012.jpg" alt="Carousel 2012"/></a>
+                                <h2 class="title carousel-title">2012</h2>
+                                <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                              </li>
+                              <li><a href="" title="Carousel 2011"><img src="images/carousel-2011.jpg" alt="Carousel 2011"/></a>
+                                <h2 class="title carousel-title">2011</h2>
+                                <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                              </li>
+                              <li><a href="" title="Carousel 2009"><img src="images/carousel-2009.jpg" alt="Carousel 2009"/></a>
+                                <h2 class="title carousel-title">2009</h2>
+                                <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                              </li>
+                              <li><a href="" title="Carousel 2008"><img src="images/carousel-2008.jpg" alt="Carousel 2008"/></a>
+                                <h2 class="title carousel-title">2008</h2>
+                                <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                              </li>
+                              <li><a href="" title="Carousel 2012"><img src="images/carousel-2012.jpg" alt="Carousel 2012"/></a>
+                                <h2 class="title carousel-title">2007</h2>
+                                <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                              </li>
+                              <li><a href="" title="Carousel 2011"><img src="images/carousel-2011.jpg" alt="Carousel 2011"/></a>
+                                <h2 class="title carousel-title">2006</h2>
+                                <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                              </li>
+                              <li><a href="" title="Carousel 2009"><img src="images/carousel-2009.jpg" alt="Carousel 2009"/></a>
+                                <h2 class="title carousel-title">2005</h2>
+                                <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                              </li>
+                              <li><a href="" title="Carousel 2008"><img src="images/carousel-2008.jpg" alt="Carousel 2008"/></a>
+                                <h2 class="title carousel-title">2004</h2>
+                                <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="controls">
+                          <ul>
+                            <li><a href="#" title="prev" class="btn-control btn-prev" data-control="prev">prev</a>
+                            </li>
+                            <li><a href="#" title="next" class="btn-control btn-next" data-control="next">next</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div id="contact" class="module panel">
+            <section>
+              <h1 class="title second-title">Liên Hệ</h1>
+              <div class="block block-contact">
+                <div class="outer">
+                  <div class="inner">
+                    <div class="content">
+                      <p class="text-hotline">hotline 1000 0000</p>
+                      <p>Xin vui lòng điền đầy đủ các thông tin dưới đây. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+                      <form action="" name="contact_form" method="POST" data-validation="true" novalidate>
+                        <p class="row">
+                          <label for="fullname" class="title four-title">họ tên</label>
+                          <input id="fullname" type="text" name="fullname" value="" required="true">
+                        </p>
+                        <p class="row">
+                          <label for="email" class="title four-title">Email</label>
+                          <input id="email" type="email" name="email" value="" required="true" data-messages-email="Please enter a valid email address!!!">
+                        </p>
+                        <p class="row">
+                          <label for="telephone" class="title four-title">số điện thoại</label>
+                          <input id="telephone" type="tel" name="telephone" value="" required="true">
+                        </p>
+                        <p class="row">
+                          <label for="description" class="title four-title">nội dung</label>
+                          <textarea id="description" name="description" rows="6" required="true"></textarea>
+                        </p>
+                        <p class="row">
+                          <button id="btn-send" type="submit" class="button">Gửi</button>
+                        </p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+      <footer id="footer">
+        <nav class="main-menu">
+          <ul>
+            <li><a href="#home" title="Trang chủ" class="active" id="link-to-home">Trang chủ</a>
+            </li>
+            <li><a href="#contest" title="Cuộc thi" id="link-to-contest">Cuộc thi</a>
+            </li>
+            <li><a href="#carousel" title="Carousel" id="link-to-carousel">Carousel</a>
+            </li>
+            <li><a href="#contact" title="Liên hệ" id="link-to-contact">Liên hệ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="block-social-copyright">
+          <div class="copyright"><a href="http://www.sofresh.vn/" title="Bản quyền 2012 bởi Sofresh">Bản quyền 2012 bởi Sofresh</a>
+          </div>
+          <div class="social">
+            <ul>
+              <li><a href="#Facebook" title="Facebook" class="link-to-facebook">Facebook</a>
+              </li>
+              <li><a href="#Twitter" title="Twitter" class="link-to-twitter">Twitter</a>
+              </li>
+              <li><a href="#GooglePlus" title="Google Plus" class="link-to-gplus">Google Plus</a>
+              </li>
+              <li><a href="#Zing" title="Zing" class="link-to-zing">Zing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/l10n.js"></script>
+    <script src="js/libs.js"></script>
+    <script src="js/script.js"></script>
+    <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+    <noscript>JavaScript is off. Please enable to view full site.</noscript>
+  </body>
+</html>
