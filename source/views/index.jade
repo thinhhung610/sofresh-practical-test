@@ -1,0 +1,42 @@
+extends layouts/layout
+
+block vars
+  -title = 'Home page'
+  -bodyClass = 'home'
+
+block container
+  .inner
+    main#main.modules
+      #home.module.panel
+        section
+          include blocks/block-home-idol
+          include blocks/block-home-test
+          include blocks/block-home-sofresh
+
+      #contest.module.panel
+        section
+          h1.title.second-title Cuộc thi
+          div.block.block-contest
+            div.outer
+              div.inner
+                div.content
+                  include blocks/block-contest-tabmenu
+                  include blocks/block-contest-tabcontent
+
+      #carousel.module.panel
+        section
+          h1.title.second-title CAROUSEL
+          div.block.block-carousel
+            div.outer
+              div.inner
+                div.content
+                  include blocks/block-carousel
+
+      #contact.module.panel
+        section
+          h1.title.second-title Liên Hệ
+          div.block.block-contact
+            div.outer
+              div.inner
+                div.content
+                  include blocks/block-contact

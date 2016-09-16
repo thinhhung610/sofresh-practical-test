@@ -1,0 +1,79 @@
+div.account-widget
+  p Bạn chưa đăng nhập. Vui lòng &nbsp;
+    +link('Đăng nhập', '#login')(class="link-to-login") &nbsp;
+    span &nbsp;hoặc&nbsp;
+    +link('Đăng ký', '#register')(class="link-to-register") &nbsp;
+
+  div#register(style="display:none")
+    h3.title.four-title Đăng ký tài khoản
+    form#register-form(action="", name="register_form", method="POST")(data-validation="true", novalidate)
+      div.row
+        label(for="username") Tên đăng nhập
+        div.col
+          input#username(type="text", name="username", value="")(required="true")
+      div.row
+        label(for="password") Mật khẩu
+        div.col
+          input#password(type="password", name="password", value="")(required="true")
+      div.row
+        label(for="retype-password") Nhập lại mật khẩu
+        div.col
+          input#retype-password(type="password", name="retype_password", value="")(required="true")
+      div.row
+        label(for="useremail") Email của bạn
+        div.col
+          input#useremail(type="email", name="useremail", value="")(required="true")
+      div.row
+        label Giới tính
+        div.col
+          fieldset.radiogroup
+            <legend></legend>
+            label.custom-radio(for="male")
+              input#male(type="radio", name="sex", value="male")
+              span Nam
+            label.custom-radio(for="female")
+              input#female(type="radio", name="sex", value="male")
+              span Nữ
+      div.row.row-birthday
+        label Ngày sinh
+        div.col
+          label.custom-select.select-date(for="date") Chọn ngày
+            select#date(name="date")
+              option(value="", selected) Ngày
+              option(value="1") 01
+              option(value="2") 02
+              option(value="3") 03
+          label.custom-select.select-month(for="month") Chọn tháng
+            select#month(name="month")
+              option(value="", selected) Tháng
+              option(value="1") 01
+              option(value="2") 02
+              option(value="3") 03
+          label.custom-select.select-year(for="year") Chọn năm
+            select#year(name="year")
+              option(value="", selected) Năm
+              option(value="1990") 1990
+              option(value="1989") 1989
+              option(value="1988") 1988
+      div.row
+        label(for="phone") Số điện thoại
+        div.col
+          input#phone(type="tel", name="phone", value="")
+      div.row
+        label(for="address") Địa chỉ
+        div.col
+          input#address(type="text", name="address", value="")
+      div.row
+        label(for="city") Tỉnh/ TP
+        div.col
+          input#city(type="text", name="city", value="")
+      div.row
+        label &nbsp;
+        div.col
+          label.custom-checkbox(for="confirm")
+            input#confirm(type="checkbox", name="confirm", value="1")
+            span Tôi đã đọc và đồng ý hoàn toàn với các <strong>Điều khoản sử dụng.</strong>
+      div.row
+        label &nbsp;
+        div.col
+          button#btn-register.button(type="submit", name="btn_register") ĐĂNG KÝ

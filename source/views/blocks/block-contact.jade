@@ -1,0 +1,17 @@
+p.text-hotline hotline 1000 0000
+p Xin vui lòng điền đầy đủ các thông tin dưới đây. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.
+form(action="", name="contact_form", method="POST")(data-validation="true", novalidate)
+  p.row
+    label.title.four-title(for="fullname") họ tên
+    input#fullname(type="text", name="fullname", value="")(required="true")
+  p.row
+    label.title.four-title(for="email") Email
+    input#email(type="email", name="email", value="")(required="true", data-messages-email="Please enter a valid email address!!!")
+  p.row
+    label.title.four-title(for="telephone") số điện thoại
+    input#telephone(type="tel", name="telephone", value="")(required="true")
+  p.row
+    label.title.four-title(for="description") nội dung
+    textarea#description(name="description", rows="6")(required="true")
+  p.row
+    button#btn-send.button(type="submit") Gửi

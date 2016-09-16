@@ -1,0 +1,16 @@
+footer#footer
+  nav.main-menu
+    ul
+      li: +link('Trang chủ', '#home')(id="link-to-home", class="active")
+      li: +link('Cuộc thi', '#contest')(id="link-to-contest")
+      li: +link('Carousel', '#carousel')(id="link-to-carousel")
+      li: +link('Liên hệ', '#contact')(id="link-to-contact")
+  div.block-social-copyright
+    div.copyright
+      +link('Bản quyền 2012 bởi Sofresh', 'http://www.sofresh.vn/')
+    div.social
+      ul
+        li: +link('Facebook', '#Facebook')(class="link-to-facebook")
+        li: +link('Twitter', '#Twitter')(class="link-to-twitter")
+        li: +link('Google Plus', '#GooglePlus')(class="link-to-gplus")
+        li: +link('Zing', '#Zing')(class="link-to-zing")

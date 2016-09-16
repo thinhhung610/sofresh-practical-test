@@ -1,0 +1,111 @@
+// Structure
+#container {
+  margin: 0 auto;
+  min-width: 1024px;
+  min-height: 768px;
+  background: url("../images/bg-body.jpg") center 0 no-repeat;
+  > .inner {
+    width: 100%;
+    min-height: 626px;
+    position: relative;
+  }
+  .module section {
+    height: 606px;
+    max-width: 1280px;
+    margin: 10px auto;
+    padding: 0 38px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+#header {
+  width: 100%;
+  padding: 15px 38px 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  .logo {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 11%;
+  }
+  .account-widget {
+    text-align: right;
+    color: #6a6a6a;
+  }
+}
+#footer {
+  background: url("../images/bg-footer.jpg") center 0 repeat-y #000;
+  text-align: center;
+  border-top: 5px solid #6D6D6D;
+
+  .main-menu {
+    a {
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: 15px 0;
+      display: block;
+      position: relative;
+    }
+
+    .active:after {
+      width: 0;
+      height: 0;
+      content: '';
+      border-width: 7px;
+      border-style: solid;
+      border-color: #6D6D6D transparent transparent transparent;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -4px;
+    }
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 35px;
+    }
+  }
+  .block-social-copyright {
+    background: url("../images/separator-line.png") center 0 no-repeat;
+    padding: 10px 0 9px;
+    font-size: 11px;
+
+    > div {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 10px;
+    }
+
+    .copyright {
+      margin-top: 2px;
+    }
+
+    .social {
+      li {
+        display: inline-block;
+        vertical-align: top;
+      }
+      a {
+        display: block;
+        background: url("../images/social-icons.png") 0 0 no-repeat;
+        width: 16px;
+        height: 15px;
+        white-space: nowrap;
+        text-indent: 100%;
+        overflow: hidden;
+      }
+      .link-to-twitter {
+        background-position: -20px 0;
+      }
+      .link-to-gplus {
+        background-position: -39px 0;
+      }
+      .link-to-zing {
+        background-position: -59px 0;
+      }
+    }
+  }
+}

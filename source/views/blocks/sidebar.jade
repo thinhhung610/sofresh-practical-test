@@ -1,0 +1,25 @@
+aside#sidebar
+  //- include widget-first.jade
+  //- include widget-second.jade
+
+  mixin widget(title, widgetClass)
+    - var classes = ["block-widget", widgetClass]
+    div(class=classes)
+      .outer
+        .inner
+          .content
+            h2.widget-title= title
+            if block
+              block
+            else
+              p The widget has no content
+
+  +widget("Block widget 1")
+  +widget("Block widget 2")
+    p This is my content of
+    p block Widget
+  +widget("Block newsletter", "block-newsletter")
+    form(name="newsletter-form", method="GET", action="")
+      label(for="newsletter") Email
+      input(type="email", name="newsletter", id="newsletter")
+      input(type="submit", value= "Send")

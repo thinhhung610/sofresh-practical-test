@@ -1,0 +1,9 @@
+mixin link(title, href)
+  - if (typeof(href) === 'undefined') href = '#'
+  a(href="#{href}", title="#{title}")&attributes(attributes)!=title
+
+mixin linkImg(title, href, src)
+  - if (typeof(href) === 'undefined') href = '#'
+  - if (typeof(src) === 'undefined') src = 'images/transparent.png'
+  a(href="#{href}", title="#{title}")&attributes(attributes)
+    img(src="#{src}", alt="#{title}")

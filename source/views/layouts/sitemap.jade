@@ -1,0 +1,321 @@
+block vars
+  -title = 'Sitemap'
+
+mixin rowTitle(title)
+  tr
+    td.title(colspan="12"): strong!=title
+mixin rowContent(obj)
+  tr(class=obj.class)&attributes(attributes)
+    - if (obj.class === "template") {
+      td.number!=obj.no
+      td.psd!=obj.psd
+      td.file: a(href=obj.link)!=obj.link
+    - } else {
+      td(colspan="3")!=obj.comment
+    - }
+    td.status!=obj.status
+    td.complete!=obj.complete
+    td.date!=obj.startDate
+    td.date!=obj.endDate
+    td.validated!=obj.checklist
+    td.validated!=obj.unitTest
+    td.validated!=obj.codeReview
+    td.developer!=obj.developer
+    td.checked-by!=obj.checkedBy
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
+    title=title
+    style.
+      .task {display: none;}
+      .task.active {display: table-row;}
+      a {display: block; color: #444; text-decoration: none;}
+      a:hover {color: #f36f21;}
+      *, *:before, *:after {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+      body {margin: 0; font-family: Arial; font-size: 11px; color: #444;}
+      table {border-collapse: collapse; border-spacing: 0;}
+      .table {width: 100%; margin: 0 auto 20px;}
+      .table caption {padding: 20px 10px; font-weight: bold; font-size: 25px; color: #f36f21; text-transform: uppercase;}
+      .table tr > th, .table tr > td {padding: 5px 3px; line-height: 1.428571429; vertical-align: top; border-bottom: 1px solid #f36f21;}
+      .table thead > tr > th {font-size: 12px;}
+      .table thead tr:first-child th {vertical-align: middle; border-top: 2px solid #f36f21;}
+      .table .template > td:first-child, .list h2 a {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAYAAAB4zEQNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDBDOUFCNEYyQ0FGMTFFM0FCMUM5MTkwM0QwOUJCNjEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDBDOUFCNTAyQ0FGMTFFM0FCMUM5MTkwM0QwOUJCNjEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowMEM5QUI0RDJDQUYxMUUzQUIxQzkxOTAzRDA5QkI2MSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowMEM5QUI0RTJDQUYxMUUzQUIxQzkxOTAzRDA5QkI2MSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pj5/52wAAACGSURBVHjaYnRxceFgYGCYDMTrdu/evZ0BCTAB8VYgTgHi5a6urmboktegbH4gPgBUYAWTZPz//z8DUKACyG6Hiv0CYiegFUfBkiAAVBAFpJYimRrKxIAHsEB1YTcW6BWQN3KgEt+B2AUocQzmWi2oxEcgdoBJwCS9gXgOEEcCJU4h2wkQYABZLy0qa/KvIgAAAABJRU5ErkJggg==); background-repeat: no-repeat; background-position: 4px center;}
+      .table .template.active > td:first-child, .list h2 a.active {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAHCAYAAAAxrNxjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAADImlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowMEM5QUI0RjJDQUYxMUUzQUIxQzkxOTAzRDA5QkI2MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowMEM5QUI1MDJDQUYxMUUzQUIxQzkxOTAzRDA5QkI2MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjAwQzlBQjREMkNBRjExRTNBQjFDOTE5MDNEMDlCQjYxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAwQzlBQjRFMkNBRjExRTNBQjFDOTE5MDNEMDlCQjYxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Pn/nbAAAAJNJREFUKFNjdHFx4WBgYNgKxNd2796dC6ThwNXVdTKQowXE3kxAAsRxAuIcoEQFTBWUnQOVm8wINNETyFkOxPxQRdFQeimU/gikIxn////PANRtBuQcAGJOZKuB7O9A7AB00imQ1QwgBpByAeJfSApBbBeoHAPYRCR3WQPZR6B8G6CiozA5FIUgQaAzQqC2rEF2BgDR8zBsD/wSJgAAAABJRU5ErkJggg==);}
+      .table .template > td, .table .template > th {background-color: #fee9c8;}
+      .table tr > td, .table tr > th {border-left: 1px solid #f36f21;}
+      .table tr > td:first-child, .table tr > th:first-child {border-left: none;}
+      .table .title {padding: 7px 10px; border-top: 1px solid #f36f21;}
+      .table .title strong {font-size: 20px; color: #f36f21;}
+      .table .number {width: 35px; text-align: center;}
+      .table td.number {padding-left: 12px; padding-right: 6px; text-align: right;}
+      .table .psd {width: 150px;}
+      .table .file {width: 200px;}
+      .table .status {width: 150px;}
+      .table .complete {width: 100px; text-align: center;}
+      .table .date {width: 100px; text-align: center;}
+      .table .validated {width: 100px; text-align: center;}
+      .table .developer {width: 120px;}
+      .table .checked-by {width: 120px;}
+      .table .template .reading {background-color: #ee82ee;}
+      .table .template .building {background-color: #eeeeee;}
+      .table .template .waiting {background-color: #ffff00;}
+      .table .template .modifying {background-color: #ffa500;}
+      .table .template .pending {background-color: #ff8080;}
+      .table .template .cutting {background-color: #ffd700;}
+      .table .template .integrating {background-color: #00ffff;}
+      .table .template .checked {background-color: #9acd32;}
+      .table .template .out-of-scope {background-color: #969696;}
+      .list {overflow: hidden;}
+      .list h2 a {padding: 0 6px 0 14px; font-size: 20px; }
+      .list h2 a.active {color: #f36f21;}
+      .list .content {padding: 7px 10px;}
+      .list .col {float: left; width: 50%;}
+      .list .col dt {font-size: 12px; font-weight: bold; padding: 0 0 10px 0;}
+      .list .col dd {display: list-item; list-style-type: disc; font-size: 11px; padding: 3px 0;}
+      .list .col a {display: inline;}
+    script(src="js/modernizr.js")
+    script(src="js/libs.js")
+    script.
+      $(document).ready(function(){
+        $('.template').click(function(){
+          $(this).closest('tr').toggleClass('active').nextUntil('.template').filter('.task').toggleClass('active');
+        }).find('.status').each(function(){
+          switch($(this).text()){
+            case 'Reading specification':
+              $(this).addClass('reading');
+              break;
+            case 'Building structure':
+              $(this).addClass('building');
+              break;
+            case 'Waiting for PSD':
+              $(this).addClass('waiting');
+              break;
+            case 'Modifying follow new PSD':
+              $(this).addClass('modify');
+              break;
+            case 'Pending for information':
+              $(this).addClass('pending');
+              break;
+            case 'Cutting template':
+              $(this).addClass('cutting');
+              break;
+            case 'Integrating template':
+              $(this).addClass('integrating');
+              break;
+            case 'Checked and validated':
+              $(this).addClass('checked');
+              break;
+            case 'Out of scope':
+              $(this).addClass('out-of-scope');
+              break;
+          }
+        });
+        $('.list .content').hide();
+        $('.list h2 a').click(function(){
+          $(this).toggleClass('active').closest('h2').next('.content').slideToggle();
+        });
+      });
+  body
+    table.table
+      caption Project
+      thead
+        tr
+          th.number No.
+          th.psd PSD
+          th.file File
+          th.status(title="Reading specification\nBuilding structure\nWaiting for PSD\nModifying follow new PSD\nPending for information\nCutting template\nIntegrating template\nChecked and validated\nOut of scope") Status
+          th.complete Complete
+          th.date Start Date
+          th.date End Date
+          th.validated Checklist
+          th.validated Unit Test
+          th.validated Code Review
+          th.developer Developer
+          th.checked-by Checked by
+      tbody
+        block container
+
+    article.list
+      h2
+        a(href="javascript:void(0);") Checklist
+      .content
+        .col
+          dl
+            dt Top Rules
+            dd You must report project status and timing daily
+            dd You must follow Git rules
+            dd You must follow Code conventions
+            dd You must not copy and paste code, only use source code manager has approved
+            dd You must perform functional test of your code, do boundary and branch test
+            dd You must follow design, storyboard, requirement and schedule provided by manager
+            dd If requirement is not 100% clear, you must ask, never assume
+            dd Raise issue to manager as soon as possible
+            dd Do not copy or send code offsite, all code is owned by Sutrix client
+            dd Never test on client’s production environment
+            dd Golden rule: Complete your work on time with high quality
+          dl
+            dt General
+            dd The page is validated by W3C
+            dd The page is checked on big screen resolution
+            dd The page is checked on supported browsers
+            dd The links and buttons should have rollover effects
+            dd Put CSS at top
+            dd Put Javascript at bottom
+            dd Using CSS Sprite for images
+            dd Check Y!Slow / PageSpeed tool at least grade B
+            dd Create libraries for special text fonts, images, banners and backgrounds
+            dd No Javascript error message on supported browsers
+            dd The forms must have validation functions
+            dd Input restriction follow the requirements in the storyboard
+            dd Avoid script inside HTML file, use external JS file
+            dd Flash detection is required
+          dl
+            dt Working Space
+            dd Draft files must be removed at the end of day
+            dd Files are placed in the correspondent folders
+            dd Source code must be committed to GIT
+        .col
+          dl
+            dt Source Code
+            dd Source code must not contain any words related to Sutrixmedia
+            dd No Sutrix text in source code
+            dd No Vietnamese text in source code
+            dd No Developer Name or Email in source code
+          dl
+            dt HTML Source
+            dd The structure supports changing content
+            dd The HTML code is well structured and semantic
+            dd Do not scale images in HTML
+            dd Each image has a relevant ALT attribute
+            dd Each link and input button has a relevant TITLE attribute
+            dd Favicon is set on each page
+            dd Each page has a unique title
+            dd Avoid using TABLE tag, should be change to DIV tag
+            dd Contact information and meeting use microformats
+            dd For .Net project: use one form, prefer CLASS selector than ID selector
+          dl
+            dt CSS Source
+            dd Make sure the page has CSS print
+            dd Each section in the CSS file must have comment
+            dd CSS code is well structured and avoid CSS hack
+            dd Avoid using @import, !important
+          dl
+            dt JavaScript Source
+            dd Global objects should exist in namespaces
+            dd Variables and functions should be declared before used
+            dd Remove unused variables and functions
+            dd Avoid using eval / classic alert function
+            dd Use GET method for Ajax request
+            dd Ajax call should have loading icon
+            dd Include necessary JS file only
+
+    article.list
+      h2
+        a(href="javascript:void(0);") Code Review
+      .content
+        .col
+          dl
+            dt HTML Source
+            dd Check for layout, alignment, spacing, padding
+            dd Code does not contain inline JavaScript event listeners
+            dd Code does not contain inline style attributes
+            dd Code does not contain deprecated elements &amp; attributes
+            dd Code does not use all caps or all lowercase title
+            dd Page begins with a valid DTD (HTML5 doctype)
+            dd Code is indented using 2 spaces
+            dd Code is semantic
+            dd Tags and attributes are lowercase
+            dd Tags are closed and nested properly
+            dd Tables are only used to display tabular data
+            dd Element IDs are unique
+            dd Code validates against the W3C validator
+            dd Code validates against WCAG level 2
+            dd Form elements are paired with labels elements containing the for attribute
+            dd Form label / input pairs are wrapped with a block level element
+            dd Forms are logically arranged within fieldsets
+            dd Page has a proper outline (H1-H6 order)
+            dd Alt attributes exist on all img elements
+            dd Events and styles applied to :hover are also applied to :focus
+            dd Tabindex order is logical and intuitive
+            dd Appropriate use of HTML inputs (e.g. email, phone) to trigger corresponding on-screen keyboards
+          dl
+            dt CSS Source
+            dd Consistent naming conventions are used
+            dd CSS validates against the W3C validator
+            dd CSS sprites are used to combine images
+            dd CSS shorthand is used for properties that support it
+          dl
+            dt Code Review Tools
+            dd DOM Monster bookmarklet @ <a href="http://mir.aculo.us/dom-monster" target="_blank">http://mir.aculo.us/dom-monster</a>
+            dd Link Checker @ <a href="http://validator.w3.org/checklink" target="_blank">http://validator.w3.org/checklink</a>
+            dd HTML: W3C HTML validator @ <a href="http://validator.w3.org" target="_blank">http://validator.w3.org</a>
+            dd CSS: W3C CSS validator @ <a href="http://jigsaw.w3.org/css-validator" target="_blank">http://jigsaw.w3.org/css-validator</a>
+            dd CSS: CSSLint @ <a href="http://csslint.net" target="_blank">http://csslint.net</a>
+            dd JavaScript: JSLint @ <a href="http://www.jslint.com" target="_blank">http://www.jslint.com</a>
+            dd JavaScript: JSHint @ <a href="http://www.jshint.com" target="_blank">http://www.jshint.com</a>
+            dd Performance: YSlow @ <a href="http://developer.yahoo.com/yslow" target="_blank">http://developer.yahoo.com/yslow</a>
+            dd Performance: PageSpeed @ <a href="https://developers.google.com/speed/pagespeed" target="_blank">https://developers.google.com/speed/pagespeed</a>
+            dd Accessibility: CynthiaSays @ <a href="http://www.cynthiasays.com" target="_blank">http://www.cynthiasays.com</a>
+            dd Accessibility: AChecker @ <a href="http://achecker.ca/checker/index.php" target="_blank">http://achecker.ca</a>
+        .col
+          dl
+            dt JavaScript Source
+            dd No syntax/runtime errors and warnings in the code
+            dd No deprecated functions in the code
+            dd A method should not be larger than 40 lines of code. The basic idea is always a function should be viewable in single screen without scrolling
+            dd Check that each function is doing only a single thing. That is never function named createCustomer should delete the existing customer and create it again
+            dd Always try to initialize the variable before using that in a function
+            dd Always try to use constants in the left hand side of the comparison. That is instead of doing if (variable == 2) always use if (2 == variable)
+            dd If function returns something, there is a return method in all cases
+            dd Make sure user input is checked for value
+            dd No magic numbers. There should be no magic numbers like 6, 10, etc… Any numbers like this should be define as a constant. And Constants should be well commented about the purpose
+            dd Always try to have unit test for the new piece of code. In ideal condition we should have 100% unit test coverage
+            dd No functions or variables in the global namespace
+            dd Write efficient code, especially in loops
+            dd Don't append to the DOM in a loop. If possible do not read from it. It’s slow
+            dd Keep style in css, use classes
+            dd Use the best jQuery selector if possible
+            dd Don't select an object in jQuery more than once, use chaining or put it in a variable
+            dd Minimize http requests
+            dd Validate user input before making http requests
+            dd Don't use jQuery $.each
+            dd Handle specific errors
+            dd Provide the user with enough info to remedy the situation when errors occur if possible
+            dd Don't put an else right after a return. Delete the else, it's unnecessary and increases indentation level
+            dd Use two spaces for indentation
+            dd When fixing a problem, check to see if the problem occurs elsewhere in the same file, and fix it everywhere if possible
+            dd End the file with a newline
+            dd Declare local variables as near to their use as possible
+            dd Do not compare x == true or x == false. Use (x) or (!x) instead. x == true, in fact, is different from if (x)! Compare objects to null, numbers to 0 or strings to "" if there is chance for confusion
+            dd Make sure that your code doesn't generate any strict JavaScript warnings, such as duplicate variable declaration, mixing return; with return value; and undeclared variables or members
+            dd Use [value1, value2] to create a JavaScript array in preference to using new Array(value1, value2)
+            dd Use {key1: value1, key2: value2} to create a JavaScript object
+            dd If having defined a constructor you need to assign default properties it is preferred to assign an object literal to the prototype property
+            dd Use regular expressions, but use them wisely
+            dd Code has been run through JSLint @ <a href="http://jslint.com" target="_blank">http://jslint.com</a> or JSHint @ <a href="http://jshint.com" target="_blank">http://jshint.com</a>
+
+    article.list
+      h2
+        a(href="javascript:void(0);") Unit Test
+      .content
+        .col
+          dl
+            dt HTML
+            dd Test on cross browsers
+            dd Test on different resolutions
+            dd Test on real devices
+            dd Test on CSS disabled
+            dd Use HTMLHint
+          dl
+            dt CSS
+            dd Check pixel perfect
+            dd Use CSSLint
+        .col
+          dl
+            dt JavaScript
+            dd Use JSHint
+            dd Use Qunit
+            dd Use Jasmine

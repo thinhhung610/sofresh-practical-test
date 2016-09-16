@@ -1,0 +1,58 @@
+div.carousel(data-mycarousel="true")
+  .preview
+    .wrap
+      ul.list-item
+        li
+          ul
+            li
+              +linkImg('Contest 1', './data/contest-detail.tpl', 'images/contest-1.jpg')(class="link-contest-detail", data-fancybox-type="ajax")
+              div.captions
+                p Đăng lên bởi <br><strong>Minh Gia</strong>
+                +linkImg('like facebook', '#', 'images/btn-likeface.png')
+            li
+              +linkImg('Contest 2', './data/contest-detail.tpl', 'images/contest-2.jpg')(class="link-contest-detail", data-fancybox-type="ajax")
+              div.captions
+                p Đăng lên bởi <br><strong>Minh Gia</strong>
+                +linkImg('like facebook', '#', 'images/btn-likeface.png')
+            li
+              +linkImg('Contest 3', './data/contest-detail.tpl', 'images/contest-3.jpg')(class="link-contest-detail", data-fancybox-type="ajax")
+              div.captions
+                p Đăng lên bởi <br><strong>Minh Gia</strong>
+                +linkImg('like facebook', '#', 'images/btn-likeface.png')
+            li
+              +linkImg('Contest 4', './data/contest-detail.tpl', 'images/contest-4.jpg')(class="link-contest-detail", data-fancybox-type="ajax")
+              div.captions
+                p Đăng lên bởi <br><strong>Minh Gia</strong>
+                +linkImg('like facebook', '#', 'images/btn-likeface.png')
+            li
+              +linkImg('Contest 5', './data/contest-detail.tpl', 'images/contest-5.jpg')(class="link-contest-detail", data-fancybox-type="ajax")
+              div.captions
+                p Đăng lên bởi <br><strong>Minh Gia</strong>
+                +linkImg('like facebook', '#', 'images/btn-likeface.png')
+            li
+              +linkImg('Contest 6', './data/contest-detail.tpl', 'images/contest-6.jpg')(class="link-contest-detail", data-fancybox-type="ajax")
+              div.captions
+                p Đăng lên bởi <br><strong>Minh Gia</strong>
+                +linkImg('like facebook', '#', 'images/btn-likeface.png')
+        li.empty-content
+          img(src="images/loader.gif", alt="Loading...")
+        li.empty-content
+          img(src="images/loader.gif", alt="Loading...")
+  .controls
+    ul
+      li
+        +link('prev')(class="btn-control btn-prev", data-control="prev")
+      li
+        +link('next')(class="btn-control btn-next", data-control="next")
+  .pagination
+    ul
+      li
+        +link('Đầu')(class="item first-item", data-paginate="first")
+      li
+        +link('1')(class="item item-1 active", data-paginate="1")
+      li
+        +link('2')(class="item item-2", data-paginate="2")
+      li
+        +link('3')(class="item item-3", data-paginate="3")
+      li
+        +link('Cuối')(class="item last-item", data-paginate="last")
